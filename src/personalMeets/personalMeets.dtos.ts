@@ -1,4 +1,4 @@
-import { FindMeetRequestDTO, MeetDTO, NewMeetRequestDTO } from "../meets/meets.dtos";
+import { DeleteMeetRequestDTO, FindMeetRequestDTO, MeetDTO, NewMeetRequestDTO } from "../meets/meets.dtos";
 
 export class PersonalMeetDTO extends MeetDTO { }
 
