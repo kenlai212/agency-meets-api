@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { OneOnOneMeetsModule } from './oneOnOneMeets/oneOnOneMeets.module';
+import { PersonalMeetsModule } from './personalMeets/personalMeets.module';
 import { GroupMeetsModule } from './groupMeets/groupMeets.module';
 
 @Module({
   imports: [
-    OneOnOneMeetsModule,
+    PersonalMeetsModule,
     GroupMeetsModule
   ],
 })

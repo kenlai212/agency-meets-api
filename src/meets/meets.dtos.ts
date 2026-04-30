@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
-import { IsDate, IsNotEmpty, IsString, MaxLength } from 'class-validator';
+import { IsDate, IsNotEmpty, IsOptional, IsString, MaxLength } from 'class-validator';
 
 export class MeetDTO {
     @ApiProperty({
@@ -46,4 +46,31 @@ export class NewMeetRequestDTO {
     @IsString()
     @MaxLength(255)
     meetingLocation: string;
+}
+
+export class FindMeetRequestDTO {
+    @ApiPropertyOptional({
+        description: 'Unique Meet ID',
+        example: `803aaf29-3f15-43d0-91c4-02a3a9fad9c0`
+    })
+    @IsOptional()
+    @IsString()
+    @MaxLength(36)
+    meetId!: string;
+
+    @ApiPropertyOptional({
+        description: 'Search Meeting Date Time start range',
+        example: `YYYY-MM-DDTHH:mm:ss.sssZ`
+    })
+    @IsOptional()
+    @IsDate()
+    searchStartTime: Date;
+
+    @ApiPropertyOptional({
+        description: 'Search Meeting Date Time ends range',
+        example: `YYYY-MM-DDTHH:mm:ss.sssZ`
+    })
+    @IsOptional()
+    @IsDate()
+    searchEndTime: Date;
 }
